@@ -1,0 +1,33 @@
+﻿@model List<Chef>
+<!-- Insert Model Here -->
+<div>
+    <div>
+        <div>
+            <a href="/AddChef" class="Add_chef"">Add Chef</a>
+            <a href="/dishes">Dishes</a>
+            <h1>Check out the roster of Chefs!</h1>
+        </div>
+        <div>
+            <table class="table table-striped h-25 scroll">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col" style="width: 50%;">Name</th>
+                    <th scope="col" style="width: 25%;">Age</th>
+                    <th scope="col" style="width: 25%;"># of Dishes</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var chef in Model)
+                {
+                    <tr>
+                        <td>@chef.FirstName @chef.LastName</td>
+                        <td>@chef.Age</td>
+                        <td>@chef.CreatedDishes.Count</td>
+                    </tr>
+                }
+            </table>
+        </div>
+        <div>
+        </div>
+    </div>
+</div>
